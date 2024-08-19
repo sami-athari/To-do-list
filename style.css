@@ -1,0 +1,150 @@
+body {
+    background: linear-gradient(135deg, #3ab7f1, #000608);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    border: none;
+}
+
+.container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 10, 10);
+    padding: 40px 40px 20px 20px;
+    text-align: center;
+    width: 400px;
+}
+
+.todo-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    width: 100%;
+}
+
+.filter-select {
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.todo-input {
+    flex: 1;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    background-color: #f1f1f1;
+}
+
+.todo-button {
+    padding: 0 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 0 25px 25px 0;   
+    background-color: #197da5;
+    color: white;
+    outline: none;
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.todo-item {
+    background: white;
+    margin: 0 0 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.9s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.todo-item.completed .todo-text {
+    text-decoration: line-through;
+    opacity: 0.6;
+    animation: lineThrough 1s forwards;
+}
+
+@keyframes lineThrough {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.todo-text {
+    flex: 1;
+    margin-left: 10px;
+    position: relative;
+}
+
+.complete-btn, .trash-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 10px;
+    outline: none;
+}
+
+.complete-btn i {
+    color: #2ecc71;
+}
+
+.trash-btn i {
+    color: #e74c3c;
+}
